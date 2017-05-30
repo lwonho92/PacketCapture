@@ -5,7 +5,6 @@
 #include "stdafx.h"
 #include "PacketCapture.h"
 #include "PacketCaptureDlg.h"
-#include "PacketOutputDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -71,9 +70,7 @@ BOOL CPacketCaptureApp::InitInstance()
 	// 적절한 내용으로 수정해야 합니다.
 	SetRegistryKey(_T("로컬 응용 프로그램 마법사에서 생성된 응용 프로그램"));
 
-	//CPacketCaptureDlg dlg;
-	CPacketOutputDlg dlg;
-
+	CPacketCaptureDlg dlg;
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)

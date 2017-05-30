@@ -1,7 +1,6 @@
-﻿  PacketCapture.cpp
-  코드를 생성하고 있습니다...
-  컴파일하고 있습니다...
-  PacketOutputDlg.cpp
-c:\packetcapture\packetcapture\packetoutputdlg.cpp(83): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-  코드를 생성하고 있습니다...
+﻿  PacketCaptureDlg.cpp
+c:\packetcapture\packetcapture\packetcapturedlg.cpp(106): warning C4101: 'fcode' :참조되지 않은 지역 변수입니다.
+c:\packetcapture\packetcapture\packetcapturedlg.cpp(108): warning C4101: 'netmask' :참조되지 않은 지역 변수입니다.
+c:\packetcapture\packetcapture\packetcapturedlg.cpp(105): warning C4101: 'adhandle' :참조되지 않은 지역 변수입니다.
+c:\packetcapture\packetcapture\packetcapturedlg.cpp(109): warning C4101: 'inum' :참조되지 않은 지역 변수입니다.
   PacketCapture.vcxproj -> C:\PacketCapture\PacketCapture\Debug\PacketCapture.exe

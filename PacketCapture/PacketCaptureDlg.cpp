@@ -6,6 +6,7 @@
 #include "PacketCapture.h"
 #include "PacketCaptureDlg.h"
 #include "afxdialogex.h"
+#include "headers.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -19,15 +20,15 @@ class CAboutDlg : public CDialogEx
 public:
 	CAboutDlg();
 
-// 대화 상자 데이터입니다.
+	// 대화 상자 데이터입니다.
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_ABOUTBOX };
 #endif
 
-	protected:
+protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 지원입니다.
 
-// 구현입니다.
+														// 구현입니다.
 protected:
 	DECLARE_MESSAGE_MAP()
 };
@@ -58,6 +59,7 @@ CPacketCaptureDlg::CPacketCaptureDlg(CWnd* pParent /*=NULL*/)
 void CPacketCaptureDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_LIST_DEVICE, listCtrl);
 }
 
 BEGIN_MESSAGE_MAP(CPacketCaptureDlg, CDialogEx)
@@ -98,7 +100,35 @@ BOOL CPacketCaptureDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// 큰 아이콘을 설정합니다.
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
-	// TODO: 여기에 추가 초기화 작업을 추가합니다.
+									// TODO: 여기에 추가 초기화 작업을 추가합니다.
+	pcap_if_t *alldevs, *d;
+	pcap_t *adhandle;
+	struct bpf_program fcode;
+	char packet_filter[] = "ip or arp", errbuf[PCAP_ERRBUF_SIZE];
+	u_int netmask;
+	int inum, i = 0;
+		
+	//	모든 네트워크 어댑터 디바이스를 받아서 alldevs에 저장.
+	if (pcap_findalldevs_ex(PCAP_SRC_IF_STRING, NULL, &alldevs, errbuf) == -1)
+	{
+		fprintf(stderr, "pcap_findalldevs에서 에러가 발생했습니다 : %s\n", errbuf);
+		MessageBox(_T(""), _T(""), MB_ICONERROR | MB_OK);
+		exit(1);
+	}
+
+	listCtrl.InsertColumn(0, L"Name", LVCF_TEXT, 50);
+	listCtrl.InsertColumn(1, L"Description", LVCF_TEXT, 50);
+	listCtrl.SetExtendedStyle(LVS_EX_FULLROWSELECT
+		| LVS_EX_GRIDLINES
+		| LVS_EX_LABELTIP);
+
+	//	모든 네트워크 어댑터 디바이스를 출력.
+	for (d = alldevs; d; d = d->next)
+	{
+
+	}
+
+	
 
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }

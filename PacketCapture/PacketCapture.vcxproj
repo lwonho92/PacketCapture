@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{AE566F49-FECC-4330-8EBA-A4FF9CBD7D8B}</ProjectGuid>
+    <ProjectGuid>{61399ACF-F935-4911-9F3E-E56C1BCD954D}</ProjectGuid>
     <RootNamespace>PacketCapture</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
     <Keyword>MFCProj</Keyword>
@@ -191,6 +191,7 @@
   <ItemGroup>
     <ClInclude Include="PacketCapture.h" />
     <ClInclude Include="PacketCaptureDlg.h" />
+    <ClInclude Include="PacketOutputDlg.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -198,6 +199,7 @@
   <ItemGroup>
     <ClCompile Include="PacketCapture.cpp" />
     <ClCompile Include="PacketCaptureDlg.cpp" />
+    <ClCompile Include="PacketOutputDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

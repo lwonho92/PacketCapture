@@ -51,5 +51,4 @@
 #endif
 #endif
 
-#include "SQLite3\sqlite3.h"
-#pragma comment(lib, "SQLite3\\sqlite3.lib")
+

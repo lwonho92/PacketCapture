@@ -64,8 +64,6 @@ BEGIN_MESSAGE_MAP(CPacketCaptureDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-	ON_BN_CLICKED(IDOK, &CPacketCaptureDlg::OnBnClickedOk)
-	ON_BN_CLICKED(IDC_MFCBUTTON2, &CPacketCaptureDlg::OnBnClickedMfcbutton2)
 END_MESSAGE_MAP()
 
 
@@ -154,91 +152,3 @@ HCURSOR CPacketCaptureDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
-
-
-void CPacketCaptureDlg::OnBnClickedOk()
-{
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	/*
-	sqlite3* pDB;
-	char* strSQL;
-	CString str, strNum, strTrno, strHotime;
-	char* pErr, *pDBFile = "Data.db";
-	int nResult = sqlite3_open(pDBFile, &pDB);
-	if (nResult)
-	{
-		AfxMessageBox(L"DB 파일을 열지 못했습니다.");
-		return;
-	}
-
-	str = "DB 생성.\r\n";
-
-	strSQL = "DROP TABLE [PacketTable]"; // 테이블이 있으면 지운다.
-	nResult = sqlite3_exec(pDB, strSQL, NULL, NULL, &pErr);
-
-	strSQL = "CREATE TABLE [PacketTable] ( \
-		[Num] int(11) NOT NULL, \
-		[trno] varchar(8) DEFAULT NULL, \
-		[hotime] varchar(6) DEFAULT NULL \
-		)"; // MySQL 자료형으로 지정함, SQLite 자료형 확인하기.
-	nResult = sqlite3_exec(pDB, strSQL, NULL, NULL, &pErr);
-	if (nResult)
-	{
-		AfxMessageBox(L"테이블을 만들기 실패!");
-		sqlite3_free(&pErr);
-		return;
-	}
-
-	str += "테이블 생성.\r\n";
-
-	strSQL = "INSERT INTO PacketTable (Num, trno, hotime) VALUES ( 100, 'PHONE', '10:10:10' );";
-	nResult = sqlite3_exec(pDB, strSQL, NULL, NULL, &pErr);
-	if (nResult)
-	{
-		AfxMessageBox(L"데이터 저장 실패!");
-		sqlite3_free(pErr);
-		return;
-	}
-
-	str += "데이터 삽입.\r\n";
-
-	strSQL = "SELECT * FROM PacketTable;";
-	char **results = NULL;
-	int rows, columns;
-
-	// 조회된 데이터의 행과 열의 수를 각각 rows, columns 에 저장한다.
-	nResult = sqlite3_get_table(pDB, strSQL, &results, &rows, &columns, &pErr);	
-	if (nResult)
-	{
-		AfxMessageBox(CString(sqlite3_errmsg(pDB)));
-		return;
-	}
-	else
-	{
-		// Display Table
-		for (int rowCtr = 0; rowCtr <= rows; ++rowCtr)
-		{
-			// 첫번째 행은 테이블의 컬럼 정보를 가져오고 두번째 행부터 데이터가 된다.
-			// 데이터만 가져오려면 rowCtr을 1부터 시작한다.
-			strNum = (CA2W)results[rowCtr * columns];
-			strTrno = (CA2W)results[rowCtr * columns + 1];
-			strHotime = (CA2W)results[rowCtr * columns + 2];
-
-			str += (strNum + L"\t" + strTrno + L"\t" + strHotime + L"\r\n");
-		}
-	}
-	AfxMessageBox(str);
-	sqlite3_free_table(results);
-
-	// Close Database
-	sqlite3_close(pDB);
-	*/
-
-	CDialogEx::OnOK();
-}
-
-
-void CPacketCaptureDlg::OnBnClickedMfcbutton2()
-{
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-}

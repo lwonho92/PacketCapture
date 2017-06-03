@@ -1,2 +1,3 @@
-#TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
-Debug|Win32|C:\PacketCapture\PacketCapture\|
+version https://git-lfs.github.com/spec/v1
+oid sha256:23090a07fe1571831433dad1806a2298087a0299eafd9c342e153fe59004aa9c
+size 199

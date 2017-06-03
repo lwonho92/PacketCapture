@@ -1,14 +1,3 @@
-﻿  stdafx.cpp
-  PacketCapture.cpp
-  코드를 생성하고 있습니다...
-  컴파일하고 있습니다...
-  PacketOutputDlg.cpp
-  코드를 생성하고 있습니다...
-  컴파일하고 있습니다...
-  PacketCaptureDlg.cpp
-c:\packetcapture\packetcapture\packetcapturedlg.cpp(106): warning C4101: 'fcode' :참조되지 않은 지역 변수입니다.
-c:\packetcapture\packetcapture\packetcapturedlg.cpp(108): warning C4101: 'netmask' :참조되지 않은 지역 변수입니다.
-c:\packetcapture\packetcapture\packetcapturedlg.cpp(105): warning C4101: 'adhandle' :참조되지 않은 지역 변수입니다.
-c:\packetcapture\packetcapture\packetcapturedlg.cpp(109): warning C4101: 'inum' :참조되지 않은 지역 변수입니다.
-  코드를 생성하고 있습니다...
-  PacketCapture.vcxproj -> C:\PacketCapture\PacketCapture\Debug\PacketCapture.exe
+version https://git-lfs.github.com/spec/v1
+oid sha256:d1c7791b8cf8c217bca024c639d59947d74641ca37b6ffb1e920ccd182e17e80
+size 88
